@@ -12,4 +12,11 @@ function list_properties() {
   >~/src/properties.json
 }
 
+# Haven't tried this yet. I only have readonly access.
+# I can probably test this on the sandbox
+function update_properties() {
+  akamai property update
+  --file ~/src/properties.json
+}
+
 "$@"
