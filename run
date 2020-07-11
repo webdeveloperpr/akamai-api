@@ -1,0 +1,21 @@
+# !/bin/bash
+IMAGE_NAME=akamai
+
+function install() {
+  docker stop $IMAGE_NAME >/dev/null 2>&1
+  docker rm $IMAGE_NAME >/dev/null 2>&1
+  docker run -it \
+    --detach \
+    --name $IMAGE_NAME \
+    -v $PWD/.edgerc:/root/.edgerc \
+    -v $PWD/src:/root/src \
+    -p 9550:9550 \
+    akamai/akamai-docker bash
+}
+
+function start() {
+  docker exec -it akamai bash
+}
+
+# Call the function
+"$@"

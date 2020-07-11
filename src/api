@@ -1,0 +1,15 @@
+# PAPI
+
+function get_groups() {
+  akamai property groups >~/src/groups.json
+}
+
+function list_properties() {
+  # contract and group can be retreved when running get_groups() fn
+  akamai property list \
+    --contract $1 \
+    --group $2
+  >~/src/properties.json
+}
+
+"$@"
