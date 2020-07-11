@@ -1,2 +1,9 @@
 # akamai
-# akamai-api
+
+## Installation
+
+`./run install`
+
+## Starting the container
+
+`./run start`
